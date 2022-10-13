@@ -1,3 +1,4 @@
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Navbar from "./components/navbar";
@@ -7,7 +8,7 @@ import About from "./pages/about";
 
 function App() {
   return (
-    <>
+    <ShoppingCartProvider>
       <Navbar />
       <Container className="mb-4">
         <Routes>
@@ -16,7 +17,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </Container>
-    </>
+    </ShoppingCartProvider>
   );
 }
 
